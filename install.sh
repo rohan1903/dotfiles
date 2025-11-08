@@ -4,6 +4,7 @@
 mkdir -p ~/.theme
 
 # link theme files
+ln -sf "$HOME/dotfiles/zsh/zshrc" "$HOME/.zshrc"
 ln -sf ~/dotfiles/theme/colors ~/.theme/colors
 ln -sf ~/dotfiles/theme/git ~/.theme/git
 
