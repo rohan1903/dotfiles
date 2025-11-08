@@ -1,0 +1,34 @@
+#############################################
+#   PERSONAL TERMINAL THEME: ICE + ROSE
+#############################################
+
+# BASE
+BACKGROUND="#13161A"   # deep charcoal black
+FOREGROUND="#E6E7E9"   # soft white text
+CURSOR="#EBBCBA"       # rose-pink cursor block
+
+#############################################
+# NORMAL COLORS 0-7  (used by programs + ls)
+#############################################
+
+COLOR_BLACK="#13161A"      # background black
+COLOR_RED="#A44A4A"        # dark maroon (errors)
+COLOR_GREEN="#A7DCA2"      # leaf green (strings/success)
+COLOR_YELLOW="#E3B34F"     # warm gold (numbers/warnings)
+COLOR_BLUE="#8DD6F2"       # ice cyan (primary accent)
+COLOR_MAGENTA="#EBBCBA"    # rose pink (secondary accent)
+COLOR_CYAN="#8DD6F2"       # ice cyan (same as blue)
+COLOR_WHITE="#E6E7E9"      # soft white
+
+#############################################
+# BRIGHT COLORS 8-15  (same hues but lifted)
+#############################################
+
+BRIGHT_BLACK="#2A2E33"     # light charcoal for contrast
+BRIGHT_RED="#C45F5F"       # brighter maroon
+BRIGHT_GREEN="#B2E6AB"     # brighter leaf green
+BRIGHT_YELLOW="#F5C85E"    # brighter gold
+BRIGHT_BLUE="#A0E2FF"      # brighter ice cyan
+BRIGHT_MAGENTA="#F1C3C1"   # brighter rose pink
+BRIGHT_CYAN="#A0E2FF"      # brighter ice cyan
+BRIGHT_WHITE="#FFFFFF"     # pure white
