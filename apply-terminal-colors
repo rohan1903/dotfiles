@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# load terminal palette variables
+source ~/dotfiles/theme/terminal
+
+# apply palette
+gsettings set org.gnome.Terminal.Legacy.Profile:/:$PROFILE/ palette "$PALETTE"
+gsettings set org.gnome.Terminal.Legacy.Profile:/:$PROFILE/ background-color "$BACKGROUND"
+gsettings set org.gnome.Terminal.Legacy.Profile:/:$PROFILE/ foreground-color "$FOREGROUND"
+gsettings set org.gnome.Terminal.Legacy.Profile:/:$PROFILE/ cursor-background-color "$CURSOR"
+
+echo "✅ terminal colors applied from ~/dotfiles/theme/terminal"
