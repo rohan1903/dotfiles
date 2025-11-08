@@ -1,4 +1,13 @@
+#############################################
+# ZSH CONFIG — ICE + ROSE
+#############################################
+
+# load color palette
 source ~/.theme/colors
+
+# prompt colors
+DIR_COLOR="#9BAEC8"       # gray-blue directory
+ARROW_COLOR="#A0E2FF"     # bright cyan arrow
 
 # ---------- OPTIONS ----------
 setopt AUTO_CD
@@ -6,21 +15,17 @@ setopt HIST_IGNORE_DUPS
 setopt SHARE_HISTORY
 setopt PROMPT_SUBST
 
-# ---------- COLORS (loaded from ~/.theme-colors) ----------
-# using $BACKGROUND, $FOREGROUND, $CYAN, $PINK, $DIR, etc.
-
+# ---------- GIT BRANCH ----------
 git_branch() {
   local branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-  [ -n "$branch" ] && echo "%F{$CYAN}($branch)%f"
+  [ -n "$branch" ] && echo "%F{$ARROW_COLOR}($branch)%f"
 }
 
 # ---------- PROMPT ----------
-PROMPT='%F{$DIR}%~%f $(git_branch) %F{$CYAN}⟶%f '
+# example: ~/project (main) ⟶
+PROMPT='%F{'"$DIR_COLOR"'}%~%f $(git_branch) %F{'"$ARROW_COLOR"'}⟶%f '
 
 # ---------- PLUGINS ----------
-# autosuggestions (disabled)
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # syntax highlighting
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
   source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -30,7 +35,3 @@ fi
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -A'
-
-
-
-
