@@ -18,12 +18,13 @@ setopt PROMPT_SUBST
 # ---------- GIT BRANCH ----------
 git_branch() {
   local branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-  [ -n "$branch" ] && echo "%F{$ARROW_COLOR}($branch)%f"
+  [ -n "$branch" ] && echo "%F{#EBBCBA}($branch)%f"
 }
 
 # ---------- PROMPT ----------
 # example: ~/project (main) ⟶
-PROMPT='%F{'"$DIR_COLOR"'}%~%f $(git_branch) %F{'"$ARROW_COLOR"'}⟶%f '
+# PROMPT='%F{'"$DIR_COLOR"'}%~%f $(git_branch) %F{'"$ARROW_COLOR"'}⟶%f '
+PROMPT='  %F{'"$ARROW_COLOR"'}⟶%f %F{'"$DIR_COLOR"'}%~%f $(git_branch) '
 
 # ---------- PLUGINS ----------
 # syntax highlighting
@@ -35,3 +36,23 @@ fi
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -A'
+
+# valid commands = green
+ZSH_HIGHLIGHT_STYLES[command]='fg=#A7DCA2'
+
+# invalid commands = maroon
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#A44A4A'
+
+# flags (-x, --help) = cyan
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#8DD6F2'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#8DD6F2'
+
+# paths = yellow/gold
+ZSH_HIGHLIGHT_STYLES[path]='fg=#E3B34F'
+ZSH_HIGHLIGHT_STYLES[quoted-argument]='fg=#EBBCBA'
+
+# show last exit code if not 0
+precmd() {
+  [[ $? -ne 0 ]] && printf "%F{#A44A4A}✗ exit: $?%f\n"
+}
+
