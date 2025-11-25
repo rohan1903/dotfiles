@@ -5,4 +5,6 @@ BACKGROUND="#13161A"
 FOREGROUND="#E6E7E9"
 CURSOR="#EBBCBA"
 
-PROFILE="b1dcc9dd-5262-4d8d-a863-c897e6d979b9"
+# PROFILE will be auto-detected by apply-terminal-colors script
+# If you need to set a specific profile, uncomment and set it:
+# PROFILE="your-profile-uuid-here"

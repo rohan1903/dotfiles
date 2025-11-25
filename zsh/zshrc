@@ -3,7 +3,11 @@
 #############################################
 
 # load color palette
-source ~/.theme/colors
+if [ -f ~/.theme/colors ]; then
+  source ~/.theme/colors
+else
+  echo "⚠️  ~/.theme/colors not found. Run install.sh to set up your dotfiles."
+fi
 
 # prompt colors
 DIR_COLOR="#9BAEC8"       # gray-blue directory
@@ -33,7 +37,15 @@ if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 fi
 
 # ---------- ALIASES ----------
-alias ls='ls --color=auto'
+# Color support for ls (Linux uses --color, macOS uses -G)
+case "$(uname -s)" in
+  Darwin*)
+    alias ls='ls -G'
+    ;;
+  *)
+    alias ls='ls --color=auto'
+    ;;
+esac
 alias ll='ls -l'
 alias la='ls -A'
 
