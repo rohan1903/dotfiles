@@ -8,21 +8,32 @@ create_symlink() {
   local source="$1"
   local target="$2"
   local description="$3"
-  
+
   # Check if target already exists
   if [ -L "$target" ]; then
     # Check if it points to the correct location
-    # Use readlink to get what the symlink points to, and compare with source
     local current_link="$(readlink "$target")"
+
+    # Normalize source to absolute path
     local source_abs="$source"
-    
-    # If source is relative, make it absolute
     if [ "${source#/}" = "$source" ]; then
+      # Source is relative, make it absolute
       source_abs="$(cd "$(dirname "$source")" 2>/dev/null && pwd)/$(basename "$source")"
     fi
-    
-    # Compare: check if readlink output matches source (absolute or relative)
-    if [ "$current_link" = "$source" ] || [ "$current_link" = "$source_abs" ]; then
+
+    # Normalize current_link to absolute path if it's relative
+    local current_link_abs="$current_link"
+    if [ "${current_link#/}" = "$current_link" ] && [ -n "$current_link" ]; then
+      # Current link is relative, resolve it relative to target's directory
+      local target_dir="$(dirname "$target")"
+      if [ -d "$target_dir" ]; then
+        local resolved="$(cd "$target_dir" 2>/dev/null && cd "$(dirname "$current_link")" 2>/dev/null && pwd)/$(basename "$current_link")"
+        [ -n "$resolved" ] && current_link_abs="$resolved"
+      fi
+    fi
+
+    # Compare: check if paths match (try both absolute and original forms)
+    if [ "$current_link_abs" = "$source_abs" ] || [ "$current_link" = "$source" ] || [ "$current_link" = "$source_abs" ]; then
       echo "✓ $description already linked correctly"
       return 0
     else
@@ -33,7 +44,7 @@ create_symlink() {
     echo "⚠️  $description exists but is not a symlink. Backing up to ${target}.backup"
     mv "$target" "${target}.backup"
   fi
-  
+
   # Create the symlink
   if ln -sf "$source" "$target"; then
     echo "✓ Linked $description"

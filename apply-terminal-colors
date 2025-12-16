@@ -22,7 +22,7 @@ if [ ! -f "$SCRIPT_DIR/theme/terminal" ]; then
   exit 1
 fi
 
-# load terminal palette variables
+# Load terminal palette variables
 source "$SCRIPT_DIR/theme/terminal"
 
 # Detect default profile if PROFILE is not set or is empty

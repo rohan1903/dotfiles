@@ -26,8 +26,6 @@ git_branch() {
 }
 
 # ---------- PROMPT ----------
-# example: ~/project (main) ⟶
-# PROMPT='%F{'"$DIR_COLOR"'}%~%f $(git_branch) %F{'"$ARROW_COLOR"'}⟶%f '
 PROMPT='  %F{'"$ARROW_COLOR"'}⟶%f %F{'"$DIR_COLOR"'}%~%f $(git_branch) '
 
 # ---------- PLUGINS ----------
@@ -65,6 +63,9 @@ ZSH_HIGHLIGHT_STYLES[quoted-argument]='fg=#EBBCBA'
 
 # show last exit code if not 0
 precmd() {
-  [[ $? -ne 0 ]] && printf "%F{#A44A4A}✗ exit: $?%f\n"
+  [[ $? -ne 0 ]] && print -P "%F{#A44A4A}✗ exit: %?%f\n"
 }
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

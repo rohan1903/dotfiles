@@ -7,7 +7,7 @@ echo ""
 remove_symlink() {
   local target="$1"
   local description="$2"
-  
+
   if [ -L "$target" ]; then
     rm "$target"
     echo "✓ Removed $description"
