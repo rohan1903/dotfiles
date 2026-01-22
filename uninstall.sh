@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "🗑️  Uninstalling dotfiles..."
+echo "🗑️  Uninstalling Ice + Rose theme..."
 echo ""
 
 # Function to remove symlink safely
@@ -25,6 +25,7 @@ remove_symlink() {
 remove_symlink "$HOME/.zshrc" ".zshrc"
 remove_symlink "$HOME/.theme/colors" "theme colors"
 remove_symlink "$HOME/.theme/git" "git theme"
+remove_symlink "$HOME/.config/kitty/kitty.conf" "kitty config"
 
 echo ""
 
@@ -35,6 +36,15 @@ if [ -d ~/.theme ]; then
     rmdir ~/.theme 2>/dev/null && echo "✓ Removed ~/.theme directory" || echo "○ ~/.theme directory not empty, keeping it"
   else
     echo "○ ~/.theme directory contains other files, keeping it"
+  fi
+fi
+
+# Remove ~/.config/kitty if empty
+if [ -d ~/.config/kitty ]; then
+  if [ -z "$(find ~/.config/kitty -mindepth 1 -maxdepth 1 2>/dev/null)" ]; then
+    rmdir ~/.config/kitty 2>/dev/null && echo "✓ Removed ~/.config/kitty directory" || echo "○ ~/.config/kitty directory not empty, keeping it"
+  else
+    echo "○ ~/.config/kitty directory contains other files, keeping it"
   fi
 fi
 

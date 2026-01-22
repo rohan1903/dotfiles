@@ -1,10 +1,9 @@
-# TERMINAL PALETTE
+#############################################
+#   ICE + ROSE THEME - GNOME TERMINAL
+#############################################
+# Palette format for GNOME Terminal gsettings
 
-PALETTE=('#13161A' '#A44A4A' '#A7DCA2' '#E3B34F' '#8DD6F2' '#EBBCBA' '#8DD6F2' '#E6E7E9' '#2A2E33' '#C45F5F' '#B2E6AB' '#F5C85E' '#A0E2FF' '#F1C3C1' '#A0E2FF' '#FFFFFF')
-BACKGROUND="#13161A"
+PALETTE=('#1e1e1e' '#A44A4A' '#A7DCA2' '#E3B34F' '#8DD6F2' '#EBBCBA' '#6EC6B8' '#E6E7E9' '#2A2E33' '#C45F5F' '#9DD097' '#F5C85E' '#A0E2FF' '#F1C3C1' '#8FD8CC' '#FFFFFF')
+BACKGROUND="#1e1e1e"
 FOREGROUND="#E6E7E9"
-CURSOR="#EBBCBA"
-
-# PROFILE will be auto-detected by apply-terminal-colors script
-# If you need to set a specific profile, uncomment and set it:
-# PROFILE="your-profile-uuid-here"
+CURSOR="#FFFFFF"

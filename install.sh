@@ -54,7 +54,7 @@ create_symlink() {
   fi
 }
 
-echo "🚀 Installing dotfiles..."
+echo "🚀 Installing Ice + Rose theme..."
 echo ""
 
 # Create theme directory
@@ -71,6 +71,11 @@ echo ""
 create_symlink "$SCRIPT_DIR/zsh/zshrc" "$HOME/.zshrc" ".zshrc"
 create_symlink "$SCRIPT_DIR/theme/colors" "$HOME/.theme/colors" "theme colors"
 create_symlink "$SCRIPT_DIR/theme/git" "$HOME/.theme/git" "git theme"
+
+# Ensure config directories exist
+mkdir -p "$HOME/.config/kitty"
+
+create_symlink "$SCRIPT_DIR/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf" "kitty config"
 
 echo ""
 
@@ -96,16 +101,6 @@ if [ -f "$SCRIPT_DIR/theme/git" ]; then
   fi
 else
   echo "⚠️  git theme file not found, skipping git configuration"
-fi
-
-echo ""
-
-# Apply terminal palette
-if [ -f "$SCRIPT_DIR/apply-terminal-colors" ]; then
-  echo "🎨 Applying terminal colors..."
-  "$SCRIPT_DIR/apply-terminal-colors"
-else
-  echo "⚠️  apply-terminal-colors script not found"
 fi
 
 echo ""

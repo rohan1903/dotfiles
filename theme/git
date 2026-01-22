@@ -1,6 +1,9 @@
-# GIT THEME
-GIT_ADDED="#A7DCA2"
-GIT_CHANGED="#E3B34F"
-GIT_UNTRACKED="#EBBCBA"
-GIT_DELETED="#A44A4A"
-GIT_BRANCH="#8DD6F2"
+#############################################
+#   ICE + ROSE THEME - GIT COLORS
+#############################################
+
+GIT_ADDED="#A7DCA2"      # Leaf green
+GIT_CHANGED="#E3B34F"    # Warm gold
+GIT_UNTRACKED="#EBBCBA"  # Rose pink
+GIT_DELETED="#A44A4A"    # Maroon
+GIT_BRANCH="#8DD6F2"     # Ice cyan

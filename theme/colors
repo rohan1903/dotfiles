@@ -1,34 +1,36 @@
 #############################################
-#   PERSONAL TERMINAL THEME: ICE + ROSE
+#   ICE + ROSE TERMINAL THEME
 #############################################
+# A refined dark theme combining ice cyan, rose pink,
+# and warm accents for a comfortable terminal experience.
 
-# BASE
-BACKGROUND="#13161A"   # deep charcoal black
-FOREGROUND="#E6E7E9"   # soft white text
-CURSOR="#EBBCBA"       # rose-pink cursor block
-
-#############################################
-# NORMAL COLORS 0-7  (used by programs + ls)
-#############################################
-
-COLOR_BLACK="#13161A"      # background black
-COLOR_RED="#A44A4A"        # dark maroon (errors)
-COLOR_GREEN="#A7DCA2"      # leaf green (strings/success)
-COLOR_YELLOW="#E3B34F"     # warm gold (numbers/warnings)
-COLOR_BLUE="#8DD6F2"       # ice cyan (primary accent)
-COLOR_MAGENTA="#EBBCBA"    # rose pink (secondary accent)
-COLOR_CYAN="#8DD6F2"       # ice cyan (same as blue)
-COLOR_WHITE="#E6E7E9"      # soft white
+# BASE COLORS
+BACKGROUND="#1e1e1e"   # Dark background
+FOREGROUND="#E6E7E9"   # Soft white text
+CURSOR="#FFFFFF"       # White cursor
 
 #############################################
-# BRIGHT COLORS 8-15  (same hues but lifted)
+# NORMAL COLORS (0-7)
 #############################################
 
-BRIGHT_BLACK="#2A2E33"     # light charcoal for contrast
-BRIGHT_RED="#C45F5F"       # brighter maroon
-BRIGHT_GREEN="#B2E6AB"     # brighter leaf green
-BRIGHT_YELLOW="#F5C85E"    # brighter gold
-BRIGHT_BLUE="#A0E2FF"      # brighter ice cyan
-BRIGHT_MAGENTA="#F1C3C1"   # brighter rose pink
-BRIGHT_CYAN="#A0E2FF"      # brighter ice cyan
-BRIGHT_WHITE="#FFFFFF"     # pure white
+COLOR_BLACK="#1e1e1e"      # Background
+COLOR_RED="#A44A4A"        # Maroon (errors)
+COLOR_GREEN="#A7DCA2"      # Leaf green (success)
+COLOR_YELLOW="#E3B34F"     # Warm gold (warnings)
+COLOR_BLUE="#8DD6F2"       # Ice cyan (primary)
+COLOR_MAGENTA="#EBBCBA"    # Rose pink (accent)
+COLOR_CYAN="#6EC6B8"       # Soft teal
+COLOR_WHITE="#E6E7E9"      # Soft white
+
+#############################################
+# BRIGHT COLORS (8-15)
+#############################################
+
+BRIGHT_BLACK="#2A2E33"     # Charcoal
+BRIGHT_RED="#C45F5F"       # Brighter maroon
+BRIGHT_GREEN="#9DD097"     # Muted bright green
+BRIGHT_YELLOW="#F5C85E"    # Brighter gold
+BRIGHT_BLUE="#A0E2FF"      # Bright ice cyan
+BRIGHT_MAGENTA="#F1C3C1"   # Brighter rose pink
+BRIGHT_CYAN="#8FD8CC"      # Brighter teal
+BRIGHT_WHITE="#FFFFFF"     # Pure white
