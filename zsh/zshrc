@@ -64,9 +64,6 @@ alias ll='ls -l'
 alias la='ls -A'
 alias tree='tree -C'
 
-# Fastfetch with Ice + Rose theme colors and system info
-alias ff='fastfetch --structure "Title:Separator:OS:Host:Kernel:Uptime:Packages:Shell:Display:DE:WM:WMTheme:Theme:Icons:Font:Cursor:Terminal:TerminalFont:CPU:GPU:Memory:Swap:Disk:LocalIp:Battery:PowerAdapter:Locale:Break:Colors"'
-
 # show last exit code if not 0 (only after commands, not on initial prompt)
 preexec() {
   _last_cmd_executed=1
