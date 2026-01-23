@@ -101,14 +101,3 @@ npm() {
 
 # ---------- PROMPT ----------
 PROMPT='%F{'"$ARROW_COLOR"'}⟶%f %F{'"$DIR_COLOR"'}%~%f $(git_branch) '
-# RPROMPT=''  # Clear right prompt in case starship set it
-if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-  ZSH_HIGHLIGHT_STYLES[command]='fg=#A7DCA2'
-  ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#A44A4A'
-  ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#8DD6F2'
-  ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#8DD6F2'
-  ZSH_HIGHLIGHT_STYLES[path]='fg=#E3B34F'
-  ZSH_HIGHLIGHT_STYLES[quoted-argument]='fg=#EBBCBA'
-fi

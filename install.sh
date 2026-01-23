@@ -76,6 +76,7 @@ create_symlink "$SCRIPT_DIR/theme/git" "$HOME/.theme/git" "git theme"
 mkdir -p "$HOME/.config/kitty"
 
 create_symlink "$SCRIPT_DIR/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf" "kitty config"
+create_symlink "$SCRIPT_DIR/vim/vimrc" "$HOME/.vimrc" ".vimrc"
 
 echo ""
 
