@@ -74,8 +74,10 @@ create_symlink "$SCRIPT_DIR/theme/git" "$HOME/.theme/git" "git theme"
 
 # Ensure config directories exist
 mkdir -p "$HOME/.config/kitty"
+mkdir -p "$HOME/.config/fastfetch"
 
 create_symlink "$SCRIPT_DIR/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf" "kitty config"
+create_symlink "$SCRIPT_DIR/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc" "fastfetch config"
 
 echo ""
 

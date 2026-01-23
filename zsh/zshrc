@@ -25,9 +25,6 @@ git_branch() {
   [ -n "$branch" ] && echo "%F{#EBBCBA}($branch)%f"
 }
 
-# ---------- PROMPT ----------
-PROMPT='%F{'"$ARROW_COLOR"'}⟶%f %F{'"$DIR_COLOR"'}%~%f $(git_branch) '
-
 # ---------- PLUGINS ----------
 # syntax highlighting
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
@@ -67,6 +64,9 @@ alias ll='ls -l'
 alias la='ls -A'
 alias tree='tree -C'
 
+# Fastfetch with Ice + Rose theme colors and system info
+alias ff='fastfetch --structure "Title:Separator:OS:Host:Kernel:Uptime:Packages:Shell:Display:DE:WM:WMTheme:Theme:Icons:Font:Cursor:Terminal:TerminalFont:CPU:GPU:Memory:Swap:Disk:LocalIp:Battery:PowerAdapter:Locale:Break:Colors"'
+
 # show last exit code if not 0 (only after commands, not on initial prompt)
 preexec() {
   _last_cmd_executed=1
@@ -82,5 +82,36 @@ precmd() {
 }
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+nvm() {
+  unset -f nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  nvm "$@"
+}
+
+node() {
+  unset -f node
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  node "$@"
+}
+
+npm() {
+  unset -f npm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  npm "$@"
+}
+
+
+# ---------- PROMPT ----------
+PROMPT='%F{'"$ARROW_COLOR"'}⟶%f %F{'"$DIR_COLOR"'}%~%f $(git_branch) '
+# RPROMPT=''  # Clear right prompt in case starship set it
+if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+  ZSH_HIGHLIGHT_STYLES[command]='fg=#A7DCA2'
+  ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#A44A4A'
+  ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#8DD6F2'
+  ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#8DD6F2'
+  ZSH_HIGHLIGHT_STYLES[path]='fg=#E3B34F'
+  ZSH_HIGHLIGHT_STYLES[quoted-argument]='fg=#EBBCBA'
+fi

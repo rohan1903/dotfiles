@@ -26,6 +26,7 @@ remove_symlink "$HOME/.zshrc" ".zshrc"
 remove_symlink "$HOME/.theme/colors" "theme colors"
 remove_symlink "$HOME/.theme/git" "git theme"
 remove_symlink "$HOME/.config/kitty/kitty.conf" "kitty config"
+remove_symlink "$HOME/.config/fastfetch/config.jsonc" "fastfetch config"
 
 echo ""
 
