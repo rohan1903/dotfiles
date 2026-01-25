@@ -19,6 +19,11 @@ setopt HIST_IGNORE_DUPS
 setopt SHARE_HISTORY
 setopt PROMPT_SUBST
 
+# ---------- COMPLETION ----------
+# Case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+autoload -Uz compinit && compinit
+
 # ---------- GIT BRANCH ----------
 git_branch() {
   local branch=$(git symbolic-ref --short HEAD 2>/dev/null)
