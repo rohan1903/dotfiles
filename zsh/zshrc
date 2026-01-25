@@ -101,3 +101,14 @@ npm() {
 
 # ---------- PROMPT ----------
 PROMPT='%F{'"$ARROW_COLOR"'}⟶%f %F{'"$DIR_COLOR"'}%~%f $(git_branch) '
+
+# bun completions
+[ -s "/home/rohan/.bun/_bun" ] && source "/home/rohan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+#DSA
+alias cprun='g++ -O2 -std=c++17 -Wall'
+

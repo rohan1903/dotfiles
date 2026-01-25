@@ -84,3 +84,6 @@ highlight Special    guifg=#9BAEC8 ctermfg=Grey
 " Fix dark pink hex colors / constants
 highlight Constant guifg=#EBBCBA ctermfg=LightRed
 highlight Number guifg=#EBBCBA ctermfg=LightRed
+
+" Bracket matching - use yellow/orange instead of bright cyan
+highlight MatchParen guifg=#E3B34F guibg=NONE gui=bold ctermfg=Yellow cterm=bold
