@@ -53,7 +53,7 @@ fi
 
 # ---------- LS_COLORS ----------
 # Used by ls, tree, and other tools
-export LS_COLORS="di=38;2;109;198;184:ln=38;2;235;188;186:ex=38;2;167;220;162:fi=38;2;230;231;233:*.md=38;2;227;179;79:*.txt=38;2;227;179;79:*.json=38;2;227;179;79:*.yml=38;2;227;179;79:*.yaml=38;2;227;179;79"
+export LS_COLORS="di=38;2;141;214;242:ow=38;2;141;214;242:tw=38;2;141;214;242:st=38;2;141;214;242:ln=38;2;235;188;186:ex=38;2;167;220;162:fi=38;2;230;231;233:*.md=38;2;227;179;79:*.txt=38;2;227;179;79:*.json=38;2;227;179;79:*.yml=38;2;227;179;79:*.yaml=38;2;227;179;79"
 
 # ---------- ALIASES ----------
 # Color support for ls (Linux uses --color, macOS uses -G)
@@ -117,3 +117,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 #DSA
 alias cprun='g++ -O2 -std=c++17 -Wall'
 
+export PATH="$HOME/.npm-global/bin:$PATH"
