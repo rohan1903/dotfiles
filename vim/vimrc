@@ -38,8 +38,24 @@ set splitright
 syntax on
 set termguicolors
 
-" Readable comments (fix dark blue)
-highlight Comment guifg=#6EC6B8 ctermfg=LightBlue cterm=NONE gui=NONE
+" Readable comments - cyan
+autocmd ColorScheme * highlight Comment guifg=#6EC6B8 ctermfg=Cyan cterm=italic gui=italic
+highlight Comment guifg=#6EC6B8 ctermfg=Cyan cterm=italic gui=italic
+
+" Markdown headings - ice blue instead of magenta
+highlight markdownH1 guifg=#A0E2FF ctermfg=Cyan gui=bold
+highlight markdownH2 guifg=#A0E2FF ctermfg=Cyan gui=bold
+highlight markdownH3 guifg=#8DD6F2 ctermfg=Cyan gui=bold
+highlight markdownH4 guifg=#8DD6F2 ctermfg=Cyan
+highlight markdownH5 guifg=#8DD6F2 ctermfg=Cyan
+highlight markdownH6 guifg=#8DD6F2 ctermfg=Cyan
+highlight markdownHeadingDelimiter guifg=#A0E2FF ctermfg=Cyan gui=bold
+
+" Markdown links/URLs - warm gold instead of purple
+highlight markdownUrl guifg=#E3B34F ctermfg=Yellow gui=underline
+highlight markdownLink guifg=#E3B34F ctermfg=Yellow
+highlight markdownLinkText guifg=#A0E2FF ctermfg=Cyan
+highlight Underlined guifg=#E3B34F ctermfg=Yellow gui=underline
 highlight LineNr guifg=#9BAEC8
 highlight CursorLineNr guifg=#A0E2FF gui=bold
 highlight Keyword guifg=#8DD6F2

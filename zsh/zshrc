@@ -115,6 +115,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 #DSA
-alias cprun='g++ -O2 -std=c++17 -Wall'
+cpprun() {
+  g++ -O2 -std=gnu++17 -Wall "$1" -o run && ./run
+}
 
 export PATH="$HOME/.npm-global/bin:$PATH"
