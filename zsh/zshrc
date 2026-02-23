@@ -120,3 +120,5 @@ cpprun() {
 }
 
 export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$PATH:/opt/pypy3/bin"
+

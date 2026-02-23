@@ -1,3 +1,6 @@
+set termguicolors
+set background=dark
+
 set nocompatible
 set number
 set relativenumber
@@ -103,3 +106,10 @@ highlight Number guifg=#EBBCBA ctermfg=LightRed
 
 " Bracket matching - use yellow/orange instead of bright cyan
 highlight MatchParen guifg=#E3B34F guibg=NONE gui=bold ctermfg=Yellow cterm=bold
+
+" Auto-close brackets and quotes
+"inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+
