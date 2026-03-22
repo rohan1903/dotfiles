@@ -1,0 +1,103 @@
+================================================================================
+MACHINE & MIGRATION AUXILIARY DETAILS
+================================================================================
+Generated for: HP ENVY x360 2-in-1 Laptop 13-bf0xxx (726X6PA#ACJ)
+Purpose: distro switch / reinstall — what is NOT covered by shell/kitty/vim
+         symlinks in this repo; export or reinstall these separately.
+
+--------------------------------------------------------------------------------
+1. FASTFETCH SNAPSHOT (software / desktop as seen in session)
+--------------------------------------------------------------------------------
+  Host:     HP ENVY x360 2-in-1 Laptop 13-bf0xxx
+  OS:       Linux Mint 22.2 x86_64 (base: Ubuntu 24.04 noble)
+  Kernel:   6.17.0-14-generic
+  Shell:    zsh 5.9
+  DE:       Cinnamon 6.4.8
+  WM:       Muffin (X11)
+  WM theme: Mint-Y-Dark-Aqua (Mint-Y)
+  GTK:      Mint-Y-Dark-Aqua [GTK2/3/4]
+  Icons:    Papirus-Dark [GTK2/3/4]
+  GTK font: Noto Sans (10pt) [GTK2/3/4]
+  Cursor:   DMZ-Black (39px)
+  Display:  AU Optronics 0x2c9f (eDP), 1920x1200 @ 60 Hz, scaling ~1.3x (13")
+  Terminal: kitty 0.32.2
+  Term font: MesloLGSNFM-Regular (13pt)
+  Locale:   en_IN
+
+--------------------------------------------------------------------------------
+2. INXI — SYSTEM / HARDWARE (reference)
+--------------------------------------------------------------------------------
+  Desktop:   Cinnamon 6.4.8, GTK 3.24.41, Muffin 6.4.1, vt 7
+  DM:        LightDM 1.30.0
+  Init:      systemd 255, graphical target
+
+  CPU:       12th Gen Intel Core i5-1230U (10 cores: 2P+8E, HT), Alder Lake
+  Graphics:  Intel Iris Xe (ADL GT2), i915, Mesa, OpenGL 4.6
+  Audio:     Intel Smart Sound — sof-audio-pci-intel-tgl
+             Intel IPU6 (imaging) — intel-ipu6 (webcam stack can be picky)
+  WiFi:      Intel Alder Lake-P CNVi — iwlwifi (AX211 class)
+  Bluetooth: Intel AX211 — btusb 5.3
+  Storage:   WD PC SN810 NVMe ~477 GiB, GPT
+  Partitions:
+    /boot/efi  vfat  ~511 MiB   /dev/nvme0n1p1
+    /          ext4  ~468 GiB   /dev/nvme0n1p2
+  Swap:       2 GiB swapfile (full use common under load) + 256 MiB zram
+  RAM:        8 GiB total (~7.45 GiB available to OS)
+  Battery:    model PABAS0241231 (values change over time)
+
+  X11:        X.Org 21.1.11, Xwayland 23.2.6, modesetting/iris
+  Session:    EGL/OpenGL via Mesa Intel Iris Xe; Wayland listed inactive
+
+  Packages (approx. at capture): ~2084 dpkg, 7 flatpak
+
+--------------------------------------------------------------------------------
+3. THIS REPO ALREADY COVERS
+--------------------------------------------------------------------------------
+  ~/.zshrc, ~/.theme/colors, ~/.theme/git (via install.sh), ~/.config/kitty/kitty.conf,
+  ~/.vimrc, git global color.* from theme/git
+
+--------------------------------------------------------------------------------
+4. DEPENDENCIES NOT VENDORED IN THIS REPO
+--------------------------------------------------------------------------------
+  - zsh-syntax-highlighting: zshrc expects
+      ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    Install via package manager or git clone; consider documenting in install.sh.
+
+  - Fonts: GTK uses Noto Sans; kitty uses Meslo LGS NF (MesloLGSNFM-*).
+    Install system-wide or in ~/.local/share/fonts; run fc-cache as needed.
+    README may still mention JetBrains Mono Nerd — align with actual terminal font.
+
+--------------------------------------------------------------------------------
+5. TRACK OUTSIDE DOTFILES (OR ADD EXPORT SCRIPTS)
+--------------------------------------------------------------------------------
+  Cinnamon / Muffin / GTK / icons / cursor / font / scaling:
+    - dconf dump (paths such as /org/cinnamon/, /org/gnome/desktop/interface/,
+      /org/gnome/desktop/wm/, peripherals) after final tweaks.
+    - Ensure theme packages exist on target: Mint-Y-*, papirus-icon-theme, etc.
+
+  Installed software:
+    - Curated apt list (or install script) + flatpak app IDs (~7 at capture).
+
+  Git beyond colors:
+    - user.name, user.email, aliases, signing — sanitized fragment or manual steps.
+
+  SSH / GPG / secrets:
+    - Never commit private keys; backup separately.
+
+  Browser profiles, email, password manager data:
+    - Separate backup; too large or sensitive for typical dotfiles.
+
+  LightDM:
+    - Only if greeter or autologin was customized.
+
+--------------------------------------------------------------------------------
+6. HARDWARE NOTES FOR TARGET DISTRO
+--------------------------------------------------------------------------------
+  - Iris Xe only: straightforward; pick kernel new enough for your target.
+  - AX211 WiFi/BT: standard on recent kernels.
+  - SOF audio: usually fine; if broken, check firmware/sof packages for distro.
+  - IPU6 webcam: check distro/wiki for HP Envy 13-bf if camera matters.
+
+================================================================================
+End of file — update dates and sections after major system changes.
+================================================================================
